@@ -1,6 +1,3 @@
-# EKS-Start-to-End
-
-EKS Setup Full Flow (End-to-End)
 Step 1: Dockerfile Ready karo
 
 Apna HTML app ka Dockerfile likh (already tere pass hai).
@@ -118,30 +115,3 @@ kubectl apply -f service.yaml
 
 Step 9: Service ka IP/DNS lo
 kubectl get svc
-
-
-Output me:
-
-Agar type=LoadBalancer hai → AWS automatically ek ELB banayega aur EXTERNAL-IP / DNS milega.
-
-Browser me khol → http://<EXTERNAL-IP>
-
-👉 Ab tera HTML app AWS EKS pe live hai ✅
-
-🔑 Quick Recap (flow chart jaisa)
-
-Dockerfile → Docker Image
-
-ECR → Store Image
-
-EKS Cluster → Control Plane
-
-Node Group → Worker EC2
-
-Kubectl Config → Connect AWS se
-
-Deployment → Pod create using ECR Image
-
-Service → Expose App (LoadBalancer / NodePort)
-
-kubectl get svc → Access via IP/DNS
